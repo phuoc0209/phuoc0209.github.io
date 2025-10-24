@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network Monitor on Blog cá nhân - Nguyễn Tiến Phước</title>
+    <link>http://localhost:1313/tags/network-monitor/</link>
+    <description>Recent content in Network Monitor on Blog cá nhân - Nguyễn Tiến Phước</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/network-monitor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bài 9 - Ứng dụng thực tế của lập trình mạng: Chat App, File Transfer, Network Monitor</title>
+      <link>http://localhost:1313/blog/bai-9/</link>
+      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-9/</guid>
+      <description>&lt;h2 id=&#34;1-giới-thiệu&#34;&gt;1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Lập trình mạng không chỉ là lý thuyết về mô hình OSI hay giao thức TCP/IP, mà còn là nền tảng để phát triển các &lt;strong&gt;ứng dụng thực tế&lt;/strong&gt; trong đời sống và doanh nghiệp.&lt;br&gt;&#xA;Ba ứng dụng tiêu biểu thể hiện sức mạnh của lập trình mạng gồm:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Chat App (Ứng dụng trò chuyện thời gian thực)&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;File Transfer (Truyền tệp giữa các máy)&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Network Monitor (Giám sát và phân tích mạng)&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Những ứng dụng này đều dựa trên nguyên lý &lt;strong&gt;client - server&lt;/strong&gt;, &lt;strong&gt;socket&lt;/strong&gt; và &lt;strong&gt;truyền dữ liệu qua giao thức mạng&lt;/strong&gt; (TCP hoặc UDP).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới thiệu ngôn ngữ Java - Blog cá nhân - Nguyễn Tiến Phước</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-blog">
+
+  
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<header>
+  <nav>
+    <a href="/"><i class="fas fa-home"></i> Home</a>
+    <a href="/blog/"><i class="fas fa-book"></i> Bài viết</a>
+    <a href="/about/"><i class="fas fa-user"></i> Giới thiệu</a>
+    
+    <button id="theme-toggle" aria-label="Chuyển đổi giao diện">
+      <i id="theme-icon" class="fas fa-sun"></i> Theme
+    </button>
+    
+    <button id="search-toggle" aria-label="Tìm kiếm">
+      <i class="fas fa-search"></i> Tìm kiếm
+    </button>
+  </nav>
+  <div class="social-links">
+    <a href="https://www.facebook.com/02p09" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="mailto:vuphuoc2004@gmail.com" target="_blank" aria-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://github.com/phuoc0209" target="_blank" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  
+  <div id="search-overlay" class="search-overlay">
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Tìm kiếm bài viết, tag..." autocomplete="off">
+        <button id="search-close" aria-label="Đóng tìm kiếm">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggleBtn = document.getElementById("theme-toggle");
+  const icon = document.getElementById("theme-icon");
+
+  
+  if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+    icon.classList.replace("fa-sun", "fa-moon");
+  }
+
+  
+  toggleBtn.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const isDark = currentTheme === "dark";
+
+    document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+    localStorage.setItem("theme", isDark ? "light" : "dark");
+
+    
+    if (isDark) {
+      
+      icon.classList.replace("fa-moon", "fa-sun");
+    } else {
+      
+      icon.classList.replace("fa-sun", "fa-moon");
+    }
+  });
+
+  
+  
+  
+  const searchToggle = document.getElementById('search-toggle');
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchContainer = document.querySelector('.search-container');
+  const searchInput = document.getElementById('search-input');
+  const searchClose = document.getElementById('search-close');
+  const searchResults = document.getElementById('search-results');
+
+  
+  searchToggle.addEventListener('click', () => {
+    searchOverlay.classList.add('show');
+    searchInput.focus();
+  });
+
+  
+  searchClose.addEventListener('click', () => {
+    searchOverlay.classList.remove('show');
+    searchInput.value = '';
+    searchResults.innerHTML = '';
+  });
+
+  
+  document.addEventListener('click', (e) => {
+    if (!searchOverlay.contains(e.target) && !searchToggle.contains(e.target)) {
+      searchOverlay.classList.remove('show');
+      searchInput.value = '';
+      searchResults.innerHTML = '';
+    }
+  });
+
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && searchOverlay.classList.contains('show')) {
+      searchOverlay.classList.remove('show');
+      searchInput.value = '';
+      searchResults.innerHTML = '';
+    }
+  });
+
+  
+  const searchData = [
+    {
+      title: "Giới thiệu ngôn ngữ Java",
+      url: "/blog/java-gioi-thieu/",
+      excerpt: "Java là một ngôn ngữ lập trình hướng đối tượng (OOP) mạnh mẽ, được phát triển bởi Sun Microsystems (nay thuộc Oracle) vào năm 1995. Đây là ngôn ngữ lập trình có khẩu hiệu nổi tiếng: 'Write once, run anywhere' – Viết một lần, chạy ở mọi nơi.",
+      tags: ["Java", "Programming", "OOP", "JVM"]
+    },
+    {
+      title: "Hướng dẫn lập trình Python",
+      url: "/blog/python-tutorial/",
+      excerpt: "Python là ngôn ngữ lập trình đơn giản, dễ học và mạnh mẽ. Python được sử dụng rộng rãi trong nhiều lĩnh vực như web development, data science, AI/ML...",
+      tags: ["Python", "Tutorial", "Programming", "Web Development"]
+    },
+    {
+      title: "JavaScript cơ bản",
+      url: "/blog/javascript-basics/",
+      excerpt: "JavaScript là ngôn ngữ lập trình phía client, được sử dụng rộng rãi trong web development. JavaScript giúp tạo ra các trang web tương tác và động...",
+      tags: ["JavaScript", "Web", "Frontend", "DOM"]
+    },
+    {
+      title: "React.js từ cơ bản đến nâng cao",
+      url: "/blog/react-tutorial/",
+      excerpt: "React là một thư viện JavaScript phổ biến để xây dựng giao diện người dùng, đặc biệt là các ứng dụng web đơn trang (SPA)...",
+      tags: ["React", "JavaScript", "Frontend", "SPA"]
+    },
+    {
+      title: "Node.js và Express.js",
+      url: "/blog/nodejs-express/",
+      excerpt: "Node.js cho phép chạy JavaScript trên server-side, kết hợp với Express.js framework để xây dựng các ứng dụng web và API...",
+      tags: ["Node.js", "Express", "Backend", "API"]
+    }
+  ];
+
+  
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    
+    if (query.length < 2) {
+      searchResults.innerHTML = '';
+      return;
+    }
+
+    const results = searchData.filter(item => {
+      const titleMatch = item.title.toLowerCase().includes(query);
+      const excerptMatch = item.excerpt.toLowerCase().includes(query);
+      const tagMatch = item.tags.some(tag => tag.toLowerCase().includes(query));
+      
+      return titleMatch || excerptMatch || tagMatch;
+    });
+
+    
+    results.sort((a, b) => {
+      const aTitleMatch = a.title.toLowerCase().includes(query);
+      const bTitleMatch = b.title.toLowerCase().includes(query);
+      
+      if (aTitleMatch && !bTitleMatch) return -1;
+      if (!aTitleMatch && bTitleMatch) return 1;
+      return 0;
+    });
+
+    displaySearchResults(results, query);
+  });
+
+  
+  function displaySearchResults(results, query) {
+    if (results.length === 0) {
+      searchResults.innerHTML = `
+        <div class="search-no-results">
+          <i class="fas fa-search" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+          <p>Không tìm thấy kết quả nào cho "<strong>${query}</strong>"</p>
+          <p style="font-size: 0.9rem; margin-top: 0.5rem;">Thử tìm kiếm với từ khóa khác</p>
+        </div>
+      `;
+      return;
+    }
+
+    const resultsHTML = results.map(item => `
+      <div class="search-result-item" onclick="window.location.href='${item.url}'">
+        <div class="search-result-title">${highlightText(item.title, query)}</div>
+        <div class="search-result-excerpt">${highlightText(item.excerpt.substring(0, 150) + '...', query)}</div>
+        <div class="search-result-tags">
+          ${item.tags.map(tag => `<span class="search-result-tag">${tag}</span>`).join('')}
+        </div>
+      </div>
+    `).join('');
+
+    searchResults.innerHTML = resultsHTML;
+  }
+
+  
+  function highlightText(text, query) {
+    if (!query) return text;
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
+  }
+</script>
+
+
+  <main class="container">
+    
+    <article>
+    <h1>Giới thiệu ngôn ngữ Java</h1>
+    <p class="post-meta"><i>Đăng ngày 20/10/2025 lúc 00:00</i></p>
+    <p>Java là một <strong>ngôn ngữ lập trình hướng đối tượng (OOP)</strong> mạnh mẽ, được phát triển bởi <strong>Sun Microsystems</strong> (nay thuộc <strong>Oracle</strong>) vào năm 1995.<br>
+Đây là ngôn ngữ lập trình có khẩu hiệu nổi tiếng:</p>
+<blockquote>
+<p><strong>“Write once, run anywhere”</strong> – Viết một lần, chạy ở mọi nơi.</p>
+</blockquote>
+<hr>
+<h2 id="1-giới-thiệu-chung">1. Giới thiệu chung</h2>
+<p>Java được thiết kế để chạy trên <strong>máy ảo Java (JVM)</strong>, giúp chương trình có thể hoạt động trên mọi hệ điều hành (Windows, macOS, Linux&hellip;).<br>
+Điều này có nghĩa là chỉ cần bạn biên dịch chương trình Java một lần, bạn có thể chạy nó trên bất kỳ nền tảng nào có cài <strong>Java Runtime Environment (JRE)</strong>.</p>
+<p><strong>Một số đặc điểm nổi bật của Java:</strong></p>
+<ul>
+<li>✅ Đa nền tảng (cross-platform)</li>
+<li>✅ Hướng đối tượng (Object-Oriented)</li>
+<li>✅ Quản lý bộ nhớ tự động (Garbage Collection)</li>
+<li>✅ Có thư viện phong phú và cộng đồng lớn</li>
+<li>✅ Dễ học, dễ sử dụng cho người mới bắt đầu</li>
+</ul>
+<hr>
+<h2 id="2-cấu-trúc-cơ-bản-của-chương-trình-java">2. Cấu trúc cơ bản của chương trình Java</h2>
+<p>Mọi chương trình Java <strong>đều bắt đầu từ phương thức <code>main()</code></strong>.<br>
+Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hello</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hello Java!&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="giải-thích">Giải thích:</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Thành phần</th>
+          <th>Ý nghĩa</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>public</code></td>
+          <td>Là <strong>phạm vi truy cập</strong>, cho phép chương trình chạy từ bên ngoài lớp.</td>
+      </tr>
+      <tr>
+          <td><code>class Hello</code></td>
+          <td>Khai báo một <strong>lớp</strong> tên là <code>Hello</code>. Trong Java, mọi thứ đều nằm trong lớp.</td>
+      </tr>
+      <tr>
+          <td><code>public static void main(String[] args)</code></td>
+          <td>Là <strong>phương thức chính (main)</strong>, nơi chương trình bắt đầu chạy.</td>
+      </tr>
+      <tr>
+          <td><code>System.out.println(&quot;Hello Java!&quot;);</code></td>
+          <td>Lệnh in ra màn hình chuỗi <code>&quot;Hello Java!&quot;</code>.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="3-biến-và-kiểu-dữ-liệu-trong-java">3. Biến và Kiểu dữ liệu trong Java</h2>
+<p>Java có <strong>2 loại kiểu dữ liệu chính</strong>:</p>
+<ol>
+<li><strong>Kiểu dữ liệu nguyên thủy (Primitive types)</strong></li>
+<li><strong>Kiểu đối tượng (Non-primitive / Reference types)</strong></li>
+</ol>
+<h3 id="ví-dụ">Ví dụ:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> age <span style="color:#f92672">=</span> 20;              <span style="color:#75715e">// Số nguyên</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> price <span style="color:#f92672">=</span> 19.<span style="color:#a6e22e">99</span>;      <span style="color:#75715e">// Số thực</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> grade <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span>;          <span style="color:#75715e">// Ký tự</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> isJavaFun <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;  <span style="color:#75715e">// Giá trị logic</span>
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tuấn&#34;</span>;      <span style="color:#75715e">// Chuỗi ký tự (đối tượng)</span>
+</span></span></code></pre></div><hr>
+<h2 id="4-cấu-trúc-điều-khiển-trong-java">4. Cấu trúc điều khiển trong Java</h2>
+<h3 id="-cấu-trúc-if-else">➤ Cấu trúc <code>if-else</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> 10;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&gt;</span> 5) {
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;x lớn hơn 5&#34;</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;x không lớn hơn 5&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="-vòng-lặp-for">➤ Vòng lặp <code>for</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;=</span> 5; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Số: &#34;</span> <span style="color:#f92672">+</span> i);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="-vòng-lặp-while">➤ Vòng lặp <code>while</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (count <span style="color:#f92672">&lt;</span> 3) {
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Java thật tuyệt!&#34;</span>);
+</span></span><span style="display:flex;"><span>  count<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="5-lớp-và-đối-tượng-oop-cơ-bản">5. Lớp và Đối tượng (OOP cơ bản)</h2>
+<p>Java là ngôn ngữ <strong>hướng đối tượng</strong>, nghĩa là bạn mô tả thế giới thực qua <strong>lớp (class)</strong> và <strong>đối tượng (object)</strong>.</p>
+<h3 id="ví-dụ-1">Ví dụ:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Thuộc tính (biến)</span>
+</span></span><span style="display:flex;"><span>  String name;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Phương thức (hàm)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">introduce</span>() {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Xin chào, mình là &#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> age <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; tuổi.&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>    Student s1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Student();   <span style="color:#75715e">// Tạo đối tượng</span>
+</span></span><span style="display:flex;"><span>    s1.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tuấn&#34;</span>;
+</span></span><span style="display:flex;"><span>    s1.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> 20;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    s1.<span style="color:#a6e22e">introduce</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Giải thích:</strong></p>
+<ul>
+<li><code>class Student</code>: định nghĩa khuôn mẫu cho đối tượng “Sinh viên”.</li>
+<li><code>name</code>, <code>age</code>: thuộc tính (dữ liệu).</li>
+<li><code>introduce()</code>: phương thức (hành vi).</li>
+<li><code>new Student()</code>: tạo một đối tượng mới thuộc lớp Student.</li>
+</ul>
+<hr>
+<h2 id="6-nhập-và-xuất-dữ-liệu">6. Nhập và xuất dữ liệu</h2>
+<p>Java có lớp <code>Scanner</code> giúp người dùng nhập dữ liệu từ bàn phím.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Scanner;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InputExample</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>    Scanner sc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner(System.<span style="color:#a6e22e">in</span>);
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Nhập tên của bạn: &#34;</span>);
+</span></span><span style="display:flex;"><span>    String name <span style="color:#f92672">=</span> sc.<span style="color:#a6e22e">nextLine</span>();
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Xin chào, &#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;!&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="7-một-số-khái-niệm-quan-trọng-khác">7. Một số khái niệm quan trọng khác</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Khái niệm</th>
+          <th>Mô tả ngắn gọn</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Package</strong></td>
+          <td>Nhóm các lớp lại để quản lý dễ hơn.</td>
+      </tr>
+      <tr>
+          <td><strong>Method</strong></td>
+          <td>Một hàm bên trong lớp.</td>
+      </tr>
+      <tr>
+          <td><strong>Constructor</strong></td>
+          <td>Hàm đặc biệt được gọi khi tạo đối tượng.</td>
+      </tr>
+      <tr>
+          <td><strong>Inheritance (Kế thừa)</strong></td>
+          <td>Cho phép lớp con kế thừa thuộc tính và phương thức của lớp cha.</td>
+      </tr>
+      <tr>
+          <td><strong>Polymorphism (Đa hình)</strong></td>
+          <td>Cho phép một phương thức có thể hoạt động khác nhau tùy đối tượng.</td>
+      </tr>
+      <tr>
+          <td><strong>Encapsulation (Đóng gói)</strong></td>
+          <td>Ẩn thông tin bên trong lớp, chỉ cung cấp những gì cần thiết.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="8-kết-luận">8. Kết luận</h2>
+<p>Java là một ngôn ngữ bền vững, mạnh mẽ, được sử dụng trong:</p>
+<ul>
+<li>Ứng dụng Android</li>
+<li>Hệ thống doanh nghiệp</li>
+<li>Trò chơi và phần mềm máy tính</li>
+<li>Ứng dụng web và dịch vụ backend</li>
+</ul>
+<blockquote>
+<p>🔸 Nếu bạn mới bắt đầu học lập trình, <strong>Java là lựa chọn tuyệt vời để rèn tư duy logic và nền tảng vững chắc</strong>.</p>
+</blockquote>
+<hr>
+<p>💡 <em>Gợi ý bài tiếp theo:</em><br>
+👉 <a href="/blog/java-bien-kieu-du-lieu/">Biến, kiểu dữ liệu và toán tử trong Java</a></p>
+<hr>
+<h1 id="kotlin--giới-thiệu">Kotlin — Giới thiệu</h1>
+<p>Tóm tắt: Kotlin là ngôn ngữ hiện đại chạy trên JVM, được dùng cho Android và backend.</p>
+<p>Mục tiêu:</p>
+<ul>
+<li>Cài Kotlin/IntelliJ hoặc sử dụng Kotlin Playground.</li>
+<li>Hiểu cú pháp cơ bản, null-safety, extension functions.</li>
+<li>Tạo project nhỏ trên JVM hoặc Android.</li>
+</ul>
+<p>Bài tập:</p>
+<ol>
+<li>Viết chương trình in &ldquo;Hello, Kotlin!&rdquo;.</li>
+<li>Viết extension function cho String.</li>
+</ol>
+<p>Tài nguyên:</p>
+<ul>
+<li><a href="https://kotlinlang.org/docs/home.html">https://kotlinlang.org/docs/home.html</a></li>
+</ul>
+<p>/* Collapsible right sidebar header <em>/
+header {
+position: fixed;
+top: 0;
+right: 0;
+height: 100vh;
+width: 56px;                /</em> collapsed width */
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.6rem;
+padding: 1rem 0.4rem;
+background: var(&ndash;header-bg);
+color: var(&ndash;header-text);
+box-shadow: -6px 0 20px rgba(0,0,0,0.08);
+z-index: 200;
+overflow: hidden;
+transition: width 0.28s ease, padding 0.28s ease;
+}</p>
+<p>/* Expanded state (on hover or when JS adds .expanded) <em>/
+header.expanded,
+header:hover {
+width: 220px;               /</em> expanded width */
+padding: 1.5rem 0.8rem;
+}</p>
+<p>/* Ensure main content shifts to avoid being covered <em>/
+main.container {
+transition: margin-right 0.28s ease;
+margin-right: 56px;         /</em> match collapsed width by default */
+}</p>
+<p>/* When header expanded, push main over */
+header.expanded ~ main.container,
+header:hover ~ main.container {
+margin-right: 220px;
+}</p>
+<p>/* Header title / nav layout */
+header h1 {
+width: 100%;
+font-size: 1rem;
+text-align: center;
+margin: 0;
+transition: opacity 0.2s ease, transform 0.2s ease;
+opacity: 0;
+transform: translateX(8px);
+}</p>
+<p>/* show title when expanded */
+header.expanded h1,
+header:hover h1 {
+opacity: 1;
+transform: translateX(0);
+}</p>
+<p>/* Vertical nav items */
+header nav {
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 6px;
+padding: 0.4rem;
+box-sizing: border-box;
+}</p>
+<p>/* Nav links: icons visible in collapsed, text reveal on expand */
+header nav a {
+display: flex;
+align-items: center;
+gap: 10px;
+width: 100%;
+padding: 0.45rem 0.6rem;
+color: var(&ndash;header-text);
+text-decoration: none;
+border-radius: 8px;
+font-size: 0.98rem;
+overflow: hidden;
+}</p>
+<p>/* label text (if you wrap text in <!-- raw HTML omitted -->) */
+header nav a .label {
+white-space: nowrap;
+transition: opacity 0.18s ease, max-width 0.18s ease;
+opacity: 0;
+max-width: 0;
+display: inline-block;
+}</p>
+<p>/* show labels when expanded */
+header.expanded nav a .label,
+header:hover nav a .label {
+opacity: 1;
+max-width: 1000px;
+}</p>
+<p>/* social links at bottom */
+header .social-links {
+margin-top: auto;
+width: 100%;
+padding: 0.6rem;
+display: flex;
+justify-content: center;
+gap: 10px;
+transition: opacity 0.2s;
+opacity: 0;
+}</p>
+<p>/* reveal socials when expanded */
+header.expanded .social-links,
+header:hover .social-links {
+opacity: 1;
+}</p>
+<p>/* Mobile: keep header horizontal and full width */
+@media (max-width: 768px) {
+header {
+position: static;
+width: 100%;
+height: auto;
+flex-direction: row;
+justify-content: space-between;
+padding: 0.8rem 1rem;
+}</p>
+<p>header.expanded,
+header:hover { width: 100%; }</p>
+<p>main.container { margin-right: 0; }
+}</p>
+
+    </article>
+    
+  </main>
+
+    <footer>
+  
+  
+  <button id="back-to-top" aria-label="Trở về đầu trang">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</footer>
+
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<script>
+  
+  const backToTopBtn = document.getElementById('back-to-top');
+  
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+  
+  
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
+
+</body>
+</html>

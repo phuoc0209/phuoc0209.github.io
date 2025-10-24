@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Connectionless Communication on Blog cá nhân - Nguyễn Tiến Phước</title>
+    <link>http://localhost:1313/tags/connectionless-communication/</link>
+    <description>Recent content in Connectionless Communication on Blog cá nhân - Nguyễn Tiến Phước</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 20 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/connectionless-communication/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bài 4 - UDP Socket – Giao tiếp không kết nối (Connectionless Communication)</title>
+      <link>http://localhost:1313/blog/bai-4/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-4/</guid>
+      <description>&lt;h2 id=&#34;1-giới-thiệu-về-udp-socket&#34;&gt;1. Giới thiệu về UDP Socket&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;UDP (User Datagram Protocol)&lt;/strong&gt; là giao thức truyền dữ liệu &lt;strong&gt;không kết nối (connectionless)&lt;/strong&gt;, cho phép gửi và nhận dữ liệu nhanh chóng mà không cần thiết lập hay duy trì phiên kết nối giữa &lt;strong&gt;client&lt;/strong&gt; và &lt;strong&gt;server&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Trong lập trình mạng, &lt;strong&gt;UDP Socket&lt;/strong&gt; được dùng khi ta cần &lt;strong&gt;tốc độ cao hơn độ tin cậy tuyệt đối&lt;/strong&gt; – ví dụ như truyền video, âm thanh, hoặc dữ liệu game thời gian thực.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

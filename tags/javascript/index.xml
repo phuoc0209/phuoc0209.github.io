@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on Blog cá nhân - Nguyễn Tiến Phước</title>
+    <link>http://localhost:1313/tags/javascript/</link>
+    <description>Recent content in Javascript on Blog cá nhân - Nguyễn Tiến Phước</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript — Giới thiệu</title>
+      <link>http://localhost:1313/blog/bai-5/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-5/</guid>
+      <description>&lt;h1 id=&#34;javascript--giới-thiệu&#34;&gt;JavaScript — Giới thiệu&lt;/h1&gt;&#xA;&lt;p&gt;Tóm tắt: JavaScript là ngôn ngữ chạy trên trình duyệt và server (Node.js), cần thiết cho frontend dynamic.&lt;/p&gt;&#xA;&lt;p&gt;Mục tiêu:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cú pháp ES6+, DOM basics.&lt;/li&gt;&#xA;&lt;li&gt;Asynchronous (Promises, async/await).&lt;/li&gt;&#xA;&lt;li&gt;Kết hợp với HTML/CSS để tạo giao diện động.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Bài tập:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Viết script thay đổi nội dung trang khi bấm nút.&lt;/li&gt;&#xA;&lt;li&gt;Fetch dữ liệu từ API và hiển thị.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Tài nguyên:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript&#34;&gt;https://developer.mozilla.org/en-US/docs/Web/JavaScript&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

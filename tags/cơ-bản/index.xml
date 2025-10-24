@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cơ Bản on Blog cá nhân - Nguyễn Tiến Phước</title>
+    <link>http://localhost:1313/tags/c%C6%A1-b%E1%BA%A3n/</link>
+    <description>Recent content in Cơ Bản on Blog cá nhân - Nguyễn Tiến Phước</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 20 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/c%C6%A1-b%E1%BA%A3n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bài 1 - Giới thiệu lập trình mạng và mô hình OSI</title>
+      <link>http://localhost:1313/blog/bai-1/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-1/</guid>
+      <description>&lt;h2 id=&#34;1-lập-trình-mạng-là-gì&#34;&gt;1. Lập trình mạng là gì&lt;/h2&gt;&#xA;&lt;p&gt;Lập trình mạng là lĩnh vực giúp máy tính có thể giao tiếp với nhau thông qua kết nối mạng.&lt;br&gt;&#xA;Các chương trình mạng thường có hai thành phần chính:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Client&lt;/strong&gt;: là bên gửi yêu cầu (ví dụ: trình duyệt web, ứng dụng chat).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Server&lt;/strong&gt;: là bên nhận yêu cầu và gửi phản hồi (ví dụ: máy chủ web, máy chủ game).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Lập trình mạng giúp ta:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

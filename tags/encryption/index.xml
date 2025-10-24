@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Encryption on Blog cá nhân - Nguyễn Tiến Phước</title>
+    <link>http://localhost:1313/tags/encryption/</link>
+    <description>Recent content in Encryption on Blog cá nhân - Nguyễn Tiến Phước</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Tue, 21 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/encryption/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bài 8 - Bảo mật mạng trong lập trình (SSL/TLS, mã hóa)</title>
+      <link>http://localhost:1313/blog/bai-8/</link>
+      <pubDate>Tue, 21 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-8/</guid>
+      <description>&lt;h2 id=&#34;1-giới-thiệu&#34;&gt;1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Trong lập trình mạng, &lt;strong&gt;bảo mật&lt;/strong&gt; là yếu tố then chốt giúp đảm bảo:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Tính bí mật (Confidentiality):&lt;/strong&gt; Dữ liệu không bị đọc lén.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Tính toàn vẹn (Integrity):&lt;/strong&gt; Dữ liệu không bị thay đổi.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Xác thực (Authentication):&lt;/strong&gt; Đảm bảo danh tính của các bên giao tiếp.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Không chối bỏ (Non-repudiation):&lt;/strong&gt; Người gửi không thể phủ nhận đã gửi dữ liệu.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Các cơ chế phổ biến:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;SSL/TLS&lt;/strong&gt;: Bảo mật đường truyền.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Mã hóa (Encryption)&lt;/strong&gt;: Bảo vệ dữ liệu.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Chữ ký số (Digital Signature)&lt;/strong&gt; và &lt;strong&gt;Chứng chỉ số (Certificate)&lt;/strong&gt;: Xác thực danh tính.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-ssltls-là-gì&#34;&gt;2. SSL/TLS là gì?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;SSL (Secure Socket Layer)&lt;/strong&gt; và &lt;strong&gt;TLS (Transport Layer Security)&lt;/strong&gt; là giao thức mã hóa cho phép truyền dữ liệu an toàn giữa client và server qua Internet.&lt;br&gt;&#xA;TLS là phiên bản nâng cấp và bảo mật hơn của SSL.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lesson on Blog cá nhân - Nguyễn Tiến Phước</title>
+    <link>http://localhost:1313/tags/lesson/</link>
+    <description>Recent content in Lesson on Blog cá nhân - Nguyễn Tiến Phước</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/lesson/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C# — Giới thiệu</title>
+      <link>http://localhost:1313/blog/bai-4/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-4/</guid>
+      <description>&lt;h1 id=&#34;c--giới-thiệu&#34;&gt;C# — Giới thiệu&lt;/h1&gt;&#xA;&lt;p&gt;Tóm tắt: C# là ngôn ngữ do Microsoft phát triển, dùng cho ứng dụng desktop, web (.NET) và game (Unity).&lt;/p&gt;&#xA;&lt;p&gt;Mục tiêu:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cài .NET SDK.&lt;/li&gt;&#xA;&lt;li&gt;Hiểu class, properties, LINQ cơ bản.&lt;/li&gt;&#xA;&lt;li&gt;Biết tạo project console và build.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Bài tập:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Tạo ứng dụng console in &amp;ldquo;Hello, C#!&amp;rdquo;.&lt;/li&gt;&#xA;&lt;li&gt;Tạo class Book và danh sách thao tác LINQ.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Tài nguyên:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/dotnet/&#34;&gt;https://docs.microsoft.com/dotnet/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Go — Giới thiệu</title>
+      <link>http://localhost:1313/blog/bai-8/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-8/</guid>
+      <description>&lt;h1 id=&#34;go--giới-thiệu&#34;&gt;Go — Giới thiệu&lt;/h1&gt;&#xA;&lt;p&gt;Tóm tắt: Go (Golang) là ngôn ngữ biên dịch, hiệu năng cao, phù hợp cho backend và hệ thống phân tán.&lt;/p&gt;&#xA;&lt;p&gt;Mục tiêu:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cài Go toolchain.&lt;/li&gt;&#xA;&lt;li&gt;Hiểu goroutine, channel, package.&lt;/li&gt;&#xA;&lt;li&gt;Build ứng dụng HTTP đơn giản.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Bài tập:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Viết HTTP server trả &amp;ldquo;Hello, Go!&amp;rdquo;.&lt;/li&gt;&#xA;&lt;li&gt;Sử dụng goroutine để thực hiện công việc song song.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Tài nguyên:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://golang.org/doc/&#34;&gt;https://golang.org/doc/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript — Giới thiệu</title>
+      <link>http://localhost:1313/blog/bai-5/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-5/</guid>
+      <description>&lt;h1 id=&#34;javascript--giới-thiệu&#34;&gt;JavaScript — Giới thiệu&lt;/h1&gt;&#xA;&lt;p&gt;Tóm tắt: JavaScript là ngôn ngữ chạy trên trình duyệt và server (Node.js), cần thiết cho frontend dynamic.&lt;/p&gt;&#xA;&lt;p&gt;Mục tiêu:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cú pháp ES6+, DOM basics.&lt;/li&gt;&#xA;&lt;li&gt;Asynchronous (Promises, async/await).&lt;/li&gt;&#xA;&lt;li&gt;Kết hợp với HTML/CSS để tạo giao diện động.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Bài tập:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Viết script thay đổi nội dung trang khi bấm nút.&lt;/li&gt;&#xA;&lt;li&gt;Fetch dữ liệu từ API và hiển thị.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Tài nguyên:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript&#34;&gt;https://developer.mozilla.org/en-US/docs/Web/JavaScript&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>PHP — Giới thiệu</title>
+      <link>http://localhost:1313/blog/bai-6/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-6/</guid>
+      <description>&lt;h1 id=&#34;php--giới-thiệu&#34;&gt;PHP — Giới thiệu&lt;/h1&gt;&#xA;&lt;p&gt;Tóm tắt: PHP là ngôn ngữ server-side phổ biến cho web, dễ triển khai trên hosting.&lt;/p&gt;&#xA;&lt;p&gt;Mục tiêu:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cài PHP / XAMPP.&lt;/li&gt;&#xA;&lt;li&gt;Xử lý form và session cơ bản.&lt;/li&gt;&#xA;&lt;li&gt;Kết nối MySQL.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Bài tập:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Viết script in &amp;ldquo;Hello, PHP!&amp;rdquo;.&lt;/li&gt;&#xA;&lt;li&gt;Tạo form lưu dữ liệu vào MySQL (local).&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Tài nguyên:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.php.net/manual/en/&#34;&gt;https://www.php.net/manual/en/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Python — Giới thiệu</title>
+      <link>http://localhost:1313/blog/bai-1/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-1/</guid>
+      <description>&lt;h1 id=&#34;python--giới-thiệu&#34;&gt;Python — Giới thiệu&lt;/h1&gt;&#xA;&lt;p&gt;Tóm tắt: Python là ngôn ngữ thông dịch, dễ đọc, phổ biến cho scripting, web, data science.&lt;/p&gt;&#xA;&lt;p&gt;Mục tiêu:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cài đặt Python, pip.&lt;/li&gt;&#xA;&lt;li&gt;Biết cú pháp cơ bản: biến, hàm, điều kiện, vòng lặp.&lt;/li&gt;&#xA;&lt;li&gt;Làm việc với list, dict, file.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Bài tập:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Viết script in &amp;ldquo;Hello, Python!&amp;rdquo;.&lt;/li&gt;&#xA;&lt;li&gt;Viết hàm tính giai thừa.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Tài nguyên:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3/&#34;&gt;https://docs.python.org/3/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Ruby — Giới thiệu</title>
+      <link>http://localhost:1313/blog/bai-7/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-7/</guid>
+      <description>&lt;h1 id=&#34;ruby--giới-thiệu&#34;&gt;Ruby — Giới thiệu&lt;/h1&gt;&#xA;&lt;p&gt;Tóm tắt: Ruby có cú pháp ngắn gọn, mạnh mẽ cho scripting và phát triển web với Rails.&lt;/p&gt;&#xA;&lt;p&gt;Mục tiêu:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cài Ruby và bundler.&lt;/li&gt;&#xA;&lt;li&gt;Hiểu class, block, iterator.&lt;/li&gt;&#xA;&lt;li&gt;Tạo script đơn giản.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Bài tập:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Viết script in các số nguyên tố đến N.&lt;/li&gt;&#xA;&lt;li&gt;Tạo class Book với phương thức hiển thị.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Tài nguyên:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.ruby-lang.org/en/documentation/&#34;&gt;https://www.ruby-lang.org/en/documentation/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Swift — Giới thiệu</title>
+      <link>http://localhost:1313/blog/bai-9/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-9/</guid>
+      <description>&lt;h1 id=&#34;swift--giới-thiệu&#34;&gt;Swift — Giới thiệu&lt;/h1&gt;&#xA;&lt;p&gt;Tóm tắt: Swift là ngôn ngữ của Apple cho phát triển iOS/macOS, an toàn và hiệu năng cao.&lt;/p&gt;&#xA;&lt;p&gt;Mục tiêu:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cài Xcode (macOS).&lt;/li&gt;&#xA;&lt;li&gt;Hiểu cú pháp cơ bản, optionals, protocol.&lt;/li&gt;&#xA;&lt;li&gt;Tạo playground và ứng dụng đơn giản.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Bài tập:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Viết playground in &amp;ldquo;Hello, Swift!&amp;rdquo;.&lt;/li&gt;&#xA;&lt;li&gt;Tạo struct và protocol cơ bản.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Tài nguyên:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://swift.org/documentation/&#34;&gt;https://swift.org/documentation/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

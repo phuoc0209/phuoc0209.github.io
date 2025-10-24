@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php on Blog cá nhân - Nguyễn Tiến Phước</title>
+    <link>http://localhost:1313/tags/php/</link>
+    <description>Recent content in Php on Blog cá nhân - Nguyễn Tiến Phước</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP — Giới thiệu</title>
+      <link>http://localhost:1313/blog/bai-6/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-6/</guid>
+      <description>&lt;h1 id=&#34;php--giới-thiệu&#34;&gt;PHP — Giới thiệu&lt;/h1&gt;&#xA;&lt;p&gt;Tóm tắt: PHP là ngôn ngữ server-side phổ biến cho web, dễ triển khai trên hosting.&lt;/p&gt;&#xA;&lt;p&gt;Mục tiêu:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cài PHP / XAMPP.&lt;/li&gt;&#xA;&lt;li&gt;Xử lý form và session cơ bản.&lt;/li&gt;&#xA;&lt;li&gt;Kết nối MySQL.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Bài tập:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Viết script in &amp;ldquo;Hello, PHP!&amp;rdquo;.&lt;/li&gt;&#xA;&lt;li&gt;Tạo form lưu dữ liệu vào MySQL (local).&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Tài nguyên:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.php.net/manual/en/&#34;&gt;https://www.php.net/manual/en/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

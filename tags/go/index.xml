@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Blog cá nhân - Nguyễn Tiến Phước</title>
+    <link>http://localhost:1313/tags/go/</link>
+    <description>Recent content in Go on Blog cá nhân - Nguyễn Tiến Phước</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go — Giới thiệu</title>
+      <link>http://localhost:1313/blog/bai-8/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-8/</guid>
+      <description>&lt;h1 id=&#34;go--giới-thiệu&#34;&gt;Go — Giới thiệu&lt;/h1&gt;&#xA;&lt;p&gt;Tóm tắt: Go (Golang) là ngôn ngữ biên dịch, hiệu năng cao, phù hợp cho backend và hệ thống phân tán.&lt;/p&gt;&#xA;&lt;p&gt;Mục tiêu:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cài Go toolchain.&lt;/li&gt;&#xA;&lt;li&gt;Hiểu goroutine, channel, package.&lt;/li&gt;&#xA;&lt;li&gt;Build ứng dụng HTTP đơn giản.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Bài tập:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Viết HTTP server trả &amp;ldquo;Hello, Go!&amp;rdquo;.&lt;/li&gt;&#xA;&lt;li&gt;Sử dụng goroutine để thực hiện công việc song song.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Tài nguyên:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://golang.org/doc/&#34;&gt;https://golang.org/doc/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Architecture on Blog cá nhân - Nguyễn Tiến Phước</title>
+    <link>http://localhost:1313/tags/architecture/</link>
+    <description>Recent content in Architecture on Blog cá nhân - Nguyễn Tiến Phước</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 20 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bài 6 - Lập trình Client – Server mô hình nhiều tầng (Multi-tier)</title>
+      <link>http://localhost:1313/blog/bai-6/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-6/</guid>
+      <description>&lt;h2 id=&#34;1-giới-thiệu-về-mô-hình-nhiều-tầng-multi-tier&#34;&gt;1. Giới thiệu về mô hình nhiều tầng (Multi-tier)&lt;/h2&gt;&#xA;&lt;p&gt;Mô hình &lt;strong&gt;Client-Server nhiều tầng (Multi-tier Architecture)&lt;/strong&gt; là một cách tổ chức hệ thống phần mềm sao cho việc xử lý dữ liệu, giao diện người dùng và truy cập cơ sở dữ liệu được tách biệt thành nhiều tầng độc lập.&lt;br&gt;&#xA;Điều này giúp &lt;strong&gt;dễ bảo trì&lt;/strong&gt;, &lt;strong&gt;mở rộng&lt;/strong&gt;, và &lt;strong&gt;nâng cấp hệ thống&lt;/strong&gt; mà không ảnh hưởng đến toàn bộ chương trình.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

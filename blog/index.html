@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Blog cá nhân - Nguyễn Tiến Phước</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-blog">
+
+  
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<header>
+  <nav>
+    <a href="/"><i class="fas fa-home"></i> Home</a>
+    <a href="/blog/"><i class="fas fa-book"></i> Bài viết</a>
+    <a href="/about/"><i class="fas fa-user"></i> Giới thiệu</a>
+    
+    <button id="theme-toggle" aria-label="Chuyển đổi giao diện">
+      <i id="theme-icon" class="fas fa-sun"></i> Theme
+    </button>
+    
+    <button id="search-toggle" aria-label="Tìm kiếm">
+      <i class="fas fa-search"></i> Tìm kiếm
+    </button>
+  </nav>
+  <div class="social-links">
+    <a href="https://www.facebook.com/02p09" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="mailto:vuphuoc2004@gmail.com" target="_blank" aria-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://github.com/phuoc0209" target="_blank" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  
+  <div id="search-overlay" class="search-overlay">
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Tìm kiếm bài viết, tag..." autocomplete="off">
+        <button id="search-close" aria-label="Đóng tìm kiếm">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggleBtn = document.getElementById("theme-toggle");
+  const icon = document.getElementById("theme-icon");
+
+  
+  if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+    icon.classList.replace("fa-sun", "fa-moon");
+  }
+
+  
+  toggleBtn.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const isDark = currentTheme === "dark";
+
+    document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+    localStorage.setItem("theme", isDark ? "light" : "dark");
+
+    
+    if (isDark) {
+      
+      icon.classList.replace("fa-moon", "fa-sun");
+    } else {
+      
+      icon.classList.replace("fa-sun", "fa-moon");
+    }
+  });
+
+  
+  
+  
+  const searchToggle = document.getElementById('search-toggle');
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchContainer = document.querySelector('.search-container');
+  const searchInput = document.getElementById('search-input');
+  const searchClose = document.getElementById('search-close');
+  const searchResults = document.getElementById('search-results');
+
+  
+  searchToggle.addEventListener('click', () => {
+    searchOverlay.classList.add('show');
+    searchInput.focus();
+  });
+
+  
+  searchClose.addEventListener('click', () => {
+    searchOverlay.classList.remove('show');
+    searchInput.value = '';
+    searchResults.innerHTML = '';
+  });
+
+  
+  document.addEventListener('click', (e) => {
+    if (!searchOverlay.contains(e.target) && !searchToggle.contains(e.target)) {
+      searchOverlay.classList.remove('show');
+      searchInput.value = '';
+      searchResults.innerHTML = '';
+    }
+  });
+
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && searchOverlay.classList.contains('show')) {
+      searchOverlay.classList.remove('show');
+      searchInput.value = '';
+      searchResults.innerHTML = '';
+    }
+  });
+
+  
+  const searchData = [
+    {
+      title: "Giới thiệu ngôn ngữ Java",
+      url: "/blog/java-gioi-thieu/",
+      excerpt: "Java là một ngôn ngữ lập trình hướng đối tượng (OOP) mạnh mẽ, được phát triển bởi Sun Microsystems (nay thuộc Oracle) vào năm 1995. Đây là ngôn ngữ lập trình có khẩu hiệu nổi tiếng: 'Write once, run anywhere' – Viết một lần, chạy ở mọi nơi.",
+      tags: ["Java", "Programming", "OOP", "JVM"]
+    },
+    {
+      title: "Hướng dẫn lập trình Python",
+      url: "/blog/python-tutorial/",
+      excerpt: "Python là ngôn ngữ lập trình đơn giản, dễ học và mạnh mẽ. Python được sử dụng rộng rãi trong nhiều lĩnh vực như web development, data science, AI/ML...",
+      tags: ["Python", "Tutorial", "Programming", "Web Development"]
+    },
+    {
+      title: "JavaScript cơ bản",
+      url: "/blog/javascript-basics/",
+      excerpt: "JavaScript là ngôn ngữ lập trình phía client, được sử dụng rộng rãi trong web development. JavaScript giúp tạo ra các trang web tương tác và động...",
+      tags: ["JavaScript", "Web", "Frontend", "DOM"]
+    },
+    {
+      title: "React.js từ cơ bản đến nâng cao",
+      url: "/blog/react-tutorial/",
+      excerpt: "React là một thư viện JavaScript phổ biến để xây dựng giao diện người dùng, đặc biệt là các ứng dụng web đơn trang (SPA)...",
+      tags: ["React", "JavaScript", "Frontend", "SPA"]
+    },
+    {
+      title: "Node.js và Express.js",
+      url: "/blog/nodejs-express/",
+      excerpt: "Node.js cho phép chạy JavaScript trên server-side, kết hợp với Express.js framework để xây dựng các ứng dụng web và API...",
+      tags: ["Node.js", "Express", "Backend", "API"]
+    }
+  ];
+
+  
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    
+    if (query.length < 2) {
+      searchResults.innerHTML = '';
+      return;
+    }
+
+    const results = searchData.filter(item => {
+      const titleMatch = item.title.toLowerCase().includes(query);
+      const excerptMatch = item.excerpt.toLowerCase().includes(query);
+      const tagMatch = item.tags.some(tag => tag.toLowerCase().includes(query));
+      
+      return titleMatch || excerptMatch || tagMatch;
+    });
+
+    
+    results.sort((a, b) => {
+      const aTitleMatch = a.title.toLowerCase().includes(query);
+      const bTitleMatch = b.title.toLowerCase().includes(query);
+      
+      if (aTitleMatch && !bTitleMatch) return -1;
+      if (!aTitleMatch && bTitleMatch) return 1;
+      return 0;
+    });
+
+    displaySearchResults(results, query);
+  });
+
+  
+  function displaySearchResults(results, query) {
+    if (results.length === 0) {
+      searchResults.innerHTML = `
+        <div class="search-no-results">
+          <i class="fas fa-search" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+          <p>Không tìm thấy kết quả nào cho "<strong>${query}</strong>"</p>
+          <p style="font-size: 0.9rem; margin-top: 0.5rem;">Thử tìm kiếm với từ khóa khác</p>
+        </div>
+      `;
+      return;
+    }
+
+    const resultsHTML = results.map(item => `
+      <div class="search-result-item" onclick="window.location.href='${item.url}'">
+        <div class="search-result-title">${highlightText(item.title, query)}</div>
+        <div class="search-result-excerpt">${highlightText(item.excerpt.substring(0, 150) + '...', query)}</div>
+        <div class="search-result-tags">
+          ${item.tags.map(tag => `<span class="search-result-tag">${tag}</span>`).join('')}
+        </div>
+      </div>
+    `).join('');
+
+    searchResults.innerHTML = resultsHTML;
+  }
+
+  
+  function highlightText(text, query) {
+    if (!query) return text;
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
+  }
+</script>
+
+
+  <main class="container">
+    
+<div class="blog-header">
+  <h1>📚 Danh sách bài viết</h1>
+  <p>Khám phá các bài viết về lập trình Java, JavaScript và mạng máy tính</p>
+</div>
+
+<div class="blog-posts">
+  
+    <article class="blog-post-card">
+      <div class="post-meta">
+        <time datetime="2025-10-24">
+          24/10/2025
+        </time>
+        
+          <div class="post-tags">
+            
+              <span class="tag">csharp</span>
+            
+              <span class="tag">lesson</span>
+            
+          </div>
+        
+      </div>
+      
+      <h2 class="post-title">
+        <a href="/blog/bai-4/">C# — Giới thiệu</a>
+      </h2>
+      
+      
+        <p class="post-summary"><h1 id="c--giới-thiệu">C# — Giới thiệu</h1>
+<p>Tóm tắt: C# là ngôn ngữ do Microsoft phát triển, dùng cho ứng dụng desktop, web (.NET) và game (Unity).</p>
+<p>Mục tiêu:</p>
+<ul>
+<li>Cài .NET SDK.</li>
+<li>Hiểu class, properties, LINQ cơ bản.</li>
+<li>Biết tạo project console và build.</li>
+</ul>
+<p>Bài tập:</p>
+<ol>
+<li>Tạo ứng dụng console in &ldquo;Hello, C#!&rdquo;.</li>
+<li>Tạo class Book và danh sách thao tác LINQ.</li>
+</ol>
+<p>Tài nguyên:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/dotnet/">https://docs.microsoft.com/dotnet/</a></li>
+</ul></p>
+      
+      
+      <div class="post-footer">
+        <a href="/blog/bai-4/" class="read-more">
+          Đọc tiếp <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+  
+    <article class="blog-post-card">
+      <div class="post-meta">
+        <time datetime="2025-10-24">
+          24/10/2025
+        </time>
+        
+          <div class="post-tags">
+            
+              <span class="tag">go</span>
+            
+              <span class="tag">golang</span>
+            
+              <span class="tag">lesson</span>
+            
+          </div>
+        
+      </div>
+      
+      <h2 class="post-title">
+        <a href="/blog/bai-8/">Go — Giới thiệu</a>
+      </h2>
+      
+      
+        <p class="post-summary"><h1 id="go--giới-thiệu">Go — Giới thiệu</h1>
+<p>Tóm tắt: Go (Golang) là ngôn ngữ biên dịch, hiệu năng cao, phù hợp cho backend và hệ thống phân tán.</p>
+<p>Mục tiêu:</p>
+<ul>
+<li>Cài Go toolchain.</li>
+<li>Hiểu goroutine, channel, package.</li>
+<li>Build ứng dụng HTTP đơn giản.</li>
+</ul>
+<p>Bài tập:</p>
+<ol>
+<li>Viết HTTP server trả &ldquo;Hello, Go!&rdquo;.</li>
+<li>Sử dụng goroutine để thực hiện công việc song song.</li>
+</ol>
+<p>Tài nguyên:</p>
+<ul>
+<li><a href="https://golang.org/doc/">https://golang.org/doc/</a></li>
+</ul></p>
+      
+      
+      <div class="post-footer">
+        <a href="/blog/bai-8/" class="read-more">
+          Đọc tiếp <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+  
+    <article class="blog-post-card">
+      <div class="post-meta">
+        <time datetime="2025-10-24">
+          24/10/2025
+        </time>
+        
+          <div class="post-tags">
+            
+              <span class="tag">javascript</span>
+            
+              <span class="tag">lesson</span>
+            
+          </div>
+        
+      </div>
+      
+      <h2 class="post-title">
+        <a href="/blog/bai-5/">JavaScript — Giới thiệu</a>
+      </h2>
+      
+      
+        <p class="post-summary"><h1 id="javascript--giới-thiệu">JavaScript — Giới thiệu</h1>
+<p>Tóm tắt: JavaScript là ngôn ngữ chạy trên trình duyệt và server (Node.js), cần thiết cho frontend dynamic.</p>
+<p>Mục tiêu:</p>
+<ul>
+<li>Cú pháp ES6+, DOM basics.</li>
+<li>Asynchronous (Promises, async/await).</li>
+<li>Kết hợp với HTML/CSS để tạo giao diện động.</li>
+</ul>
+<p>Bài tập:</p>
+<ol>
+<li>Viết script thay đổi nội dung trang khi bấm nút.</li>
+<li>Fetch dữ liệu từ API và hiển thị.</li>
+</ol>
+<p>Tài nguyên:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></li>
+</ul></p>
+      
+      
+      <div class="post-footer">
+        <a href="/blog/bai-5/" class="read-more">
+          Đọc tiếp <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+  
+    <article class="blog-post-card">
+      <div class="post-meta">
+        <time datetime="2025-10-24">
+          24/10/2025
+        </time>
+        
+          <div class="post-tags">
+            
+              <span class="tag">php</span>
+            
+              <span class="tag">lesson</span>
+            
+          </div>
+        
+      </div>
+      
+      <h2 class="post-title">
+        <a href="/blog/bai-6/">PHP — Giới thiệu</a>
+      </h2>
+      
+      
+        <p class="post-summary"><h1 id="php--giới-thiệu">PHP — Giới thiệu</h1>
+<p>Tóm tắt: PHP là ngôn ngữ server-side phổ biến cho web, dễ triển khai trên hosting.</p>
+<p>Mục tiêu:</p>
+<ul>
+<li>Cài PHP / XAMPP.</li>
+<li>Xử lý form và session cơ bản.</li>
+<li>Kết nối MySQL.</li>
+</ul>
+<p>Bài tập:</p>
+<ol>
+<li>Viết script in &ldquo;Hello, PHP!&rdquo;.</li>
+<li>Tạo form lưu dữ liệu vào MySQL (local).</li>
+</ol>
+<p>Tài nguyên:</p>
+<ul>
+<li><a href="https://www.php.net/manual/en/">https://www.php.net/manual/en/</a></li>
+</ul></p>
+      
+      
+      <div class="post-footer">
+        <a href="/blog/bai-6/" class="read-more">
+          Đọc tiếp <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+  
+    <article class="blog-post-card">
+      <div class="post-meta">
+        <time datetime="2025-10-24">
+          24/10/2025
+        </time>
+        
+          <div class="post-tags">
+            
+              <span class="tag">python</span>
+            
+              <span class="tag">lesson</span>
+            
+          </div>
+        
+      </div>
+      
+      <h2 class="post-title">
+        <a href="/blog/bai-1/">Python — Giới thiệu</a>
+      </h2>
+      
+      
+        <p class="post-summary"><h1 id="python--giới-thiệu">Python — Giới thiệu</h1>
+<p>Tóm tắt: Python là ngôn ngữ thông dịch, dễ đọc, phổ biến cho scripting, web, data science.</p>
+<p>Mục tiêu:</p>
+<ul>
+<li>Cài đặt Python, pip.</li>
+<li>Biết cú pháp cơ bản: biến, hàm, điều kiện, vòng lặp.</li>
+<li>Làm việc với list, dict, file.</li>
+</ul>
+<p>Bài tập:</p>
+<ol>
+<li>Viết script in &ldquo;Hello, Python!&rdquo;.</li>
+<li>Viết hàm tính giai thừa.</li>
+</ol>
+<p>Tài nguyên:</p>
+<ul>
+<li><a href="https://docs.python.org/3/">https://docs.python.org/3/</a></li>
+</ul></p>
+      
+      
+      <div class="post-footer">
+        <a href="/blog/bai-1/" class="read-more">
+          Đọc tiếp <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+  
+    <article class="blog-post-card">
+      <div class="post-meta">
+        <time datetime="2025-10-24">
+          24/10/2025
+        </time>
+        
+          <div class="post-tags">
+            
+              <span class="tag">ruby</span>
+            
+              <span class="tag">lesson</span>
+            
+          </div>
+        
+      </div>
+      
+      <h2 class="post-title">
+        <a href="/blog/bai-7/">Ruby — Giới thiệu</a>
+      </h2>
+      
+      
+        <p class="post-summary"><h1 id="ruby--giới-thiệu">Ruby — Giới thiệu</h1>
+<p>Tóm tắt: Ruby có cú pháp ngắn gọn, mạnh mẽ cho scripting và phát triển web với Rails.</p>
+<p>Mục tiêu:</p>
+<ul>
+<li>Cài Ruby và bundler.</li>
+<li>Hiểu class, block, iterator.</li>
+<li>Tạo script đơn giản.</li>
+</ul>
+<p>Bài tập:</p>
+<ol>
+<li>Viết script in các số nguyên tố đến N.</li>
+<li>Tạo class Book với phương thức hiển thị.</li>
+</ol>
+<p>Tài nguyên:</p>
+<ul>
+<li><a href="https://www.ruby-lang.org/en/documentation/">https://www.ruby-lang.org/en/documentation/</a></li>
+</ul></p>
+      
+      
+      <div class="post-footer">
+        <a href="/blog/bai-7/" class="read-more">
+          Đọc tiếp <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+  
+    <article class="blog-post-card">
+      <div class="post-meta">
+        <time datetime="2025-10-24">
+          24/10/2025
+        </time>
+        
+          <div class="post-tags">
+            
+              <span class="tag">swift</span>
+            
+              <span class="tag">lesson</span>
+            
+          </div>
+        
+      </div>
+      
+      <h2 class="post-title">
+        <a href="/blog/bai-9/">Swift — Giới thiệu</a>
+      </h2>
+      
+      
+        <p class="post-summary"><h1 id="swift--giới-thiệu">Swift — Giới thiệu</h1>
+<p>Tóm tắt: Swift là ngôn ngữ của Apple cho phát triển iOS/macOS, an toàn và hiệu năng cao.</p>
+<p>Mục tiêu:</p>
+<ul>
+<li>Cài Xcode (macOS).</li>
+<li>Hiểu cú pháp cơ bản, optionals, protocol.</li>
+<li>Tạo playground và ứng dụng đơn giản.</li>
+</ul>
+<p>Bài tập:</p>
+<ol>
+<li>Viết playground in &ldquo;Hello, Swift!&rdquo;.</li>
+<li>Tạo struct và protocol cơ bản.</li>
+</ol>
+<p>Tài nguyên:</p>
+<ul>
+<li><a href="https://swift.org/documentation/">https://swift.org/documentation/</a></li>
+</ul></p>
+      
+      
+      <div class="post-footer">
+        <a href="/blog/bai-9/" class="read-more">
+          Đọc tiếp <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+  
+    <article class="blog-post-card">
+      <div class="post-meta">
+        <time datetime="2025-10-20">
+          20/10/2025
+        </time>
+        
+      </div>
+      
+      <h2 class="post-title">
+        <a href="/blog/bai-2/">Bài 2 - Làm việc với Socket trong Java, Python và C#</a>
+      </h2>
+      
+      
+        <p class="post-description">Hướng dẫn chi tiết cách sử dụng Socket trong Java, Python và C# với ví dụ code thực tế cho TCP và UDP.</p>
+      
+      
+      <div class="post-footer">
+        <a href="/blog/bai-2/" class="read-more">
+          Đọc tiếp <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+  
+    <article class="blog-post-card">
+      <div class="post-meta">
+        <time datetime="2025-10-20">
+          20/10/2025
+        </time>
+        
+          <div class="post-tags">
+            
+              <span class="tag">TCP</span>
+            
+              <span class="tag">Socket</span>
+            
+              <span class="tag">Network Programming</span>
+            
+              <span class="tag">Reliable Communication</span>
+            
+          </div>
+        
+      </div>
+      
+      <h2 class="post-title">
+        <a href="/blog/bai-3/">Bài 3 - TCP Socket – Giao tiếp có kết nối (Reliable Communication)</a>
+      </h2>
+      
+      
+        <p class="post-description">Tìm hiểu chi tiết cách hoạt động của TCP Socket trong lập trình mạng: cơ chế kết nối, truyền dữ liệu tin cậy, ví dụ minh họa và ứng dụng thực tế.</p>
+      
+      
+      <div class="post-footer">
+        <a href="/blog/bai-3/" class="read-more">
+          Đọc tiếp <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+  
+    <article class="blog-post-card">
+      <div class="post-meta">
+        <time datetime="2025-10-20">
+          20/10/2025
+        </time>
+        
+      </div>
+      
+      <h2 class="post-title">
+        <a href="/blog/java-gioi-thieu/">Giới thiệu ngôn ngữ Java</a>
+      </h2>
+      
+      
+        <p class="post-description">Tìm hiểu về ngôn ngữ lập trình Java từ cơ bản đến nâng cao, bao gồm cú pháp, OOP, và các khái niệm quan trọng cho người mới bắt đầu.</p>
+      
+      
+      <div class="post-footer">
+        <a href="/blog/java-gioi-thieu/" class="read-more">
+          Đọc tiếp <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+  
+</div>
+
+  </main>
+
+    <footer>
+  
+  
+  <button id="back-to-top" aria-label="Trở về đầu trang">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</footer>
+
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<script>
+  
+  const backToTopBtn = document.getElementById('back-to-top');
+  
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+  
+  
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network Programming on Blog cá nhân - Nguyễn Tiến Phước</title>
+    <link>http://localhost:1313/tags/network-programming/</link>
+    <description>Recent content in Network Programming on Blog cá nhân - Nguyễn Tiến Phước</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 20 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/network-programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bài 3 - TCP Socket – Giao tiếp có kết nối (Reliable Communication)</title>
+      <link>http://localhost:1313/blog/bai-3/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-3/</guid>
+      <description>&lt;h2 id=&#34;1-giới-thiệu-về-tcp-socket&#34;&gt;1. Giới thiệu về TCP Socket&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;TCP (Transmission Control Protocol)&lt;/strong&gt; là giao thức truyền dữ liệu có kết nối, đảm bảo thông tin được gửi đến đúng đích và theo đúng thứ tự.&lt;br&gt;&#xA;Trong lập trình mạng, &lt;strong&gt;TCP Socket&lt;/strong&gt; được sử dụng để thiết lập kết nối giữa &lt;strong&gt;client&lt;/strong&gt; và &lt;strong&gt;server&lt;/strong&gt; nhằm trao đổi dữ liệu một cách tin cậy.&lt;/p&gt;&#xA;&lt;p&gt;Mỗi kết nối TCP gồm:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Địa chỉ IP&lt;/strong&gt;: xác định thiết bị trong mạng.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cổng (Port)&lt;/strong&gt;: xác định ứng dụng hoặc dịch vụ cụ thể.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Socket&lt;/strong&gt;: kết hợp giữa IP và port → tạo điểm cuối giao tiếp (endpoint).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ví dụ:&lt;br&gt;&#xA;&lt;code&gt;192.168.1.10:8080&lt;/code&gt; là một socket.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

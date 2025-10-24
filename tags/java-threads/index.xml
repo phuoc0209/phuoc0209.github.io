@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java Threads on Blog cá nhân - Nguyễn Tiến Phước</title>
+    <link>http://localhost:1313/tags/java-threads/</link>
+    <description>Recent content in Java Threads on Blog cá nhân - Nguyễn Tiến Phước</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 20 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/java-threads/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bài 5 - Đa luồng (Multithreading) trong lập trình mạng</title>
+      <link>http://localhost:1313/blog/bai-5/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bai-5/</guid>
+      <description>&lt;h2 id=&#34;1-giới-thiệu-về-đa-luồng-trong-lập-trình-mạng&#34;&gt;1. Giới thiệu về đa luồng trong lập trình mạng&lt;/h2&gt;&#xA;&lt;p&gt;Trong lập trình mạng, &lt;strong&gt;đa luồng (Multithreading)&lt;/strong&gt; cho phép chương trình xử lý &lt;strong&gt;nhiều kết nối cùng lúc&lt;/strong&gt;, giúp &lt;strong&gt;tăng hiệu năng&lt;/strong&gt; và &lt;strong&gt;độ phản hồi&lt;/strong&gt; của server.&lt;br&gt;&#xA;Một &lt;strong&gt;server đơn luồng (single-threaded)&lt;/strong&gt; chỉ có thể phục vụ &lt;strong&gt;một client tại một thời điểm&lt;/strong&gt;, trong khi &lt;strong&gt;đa luồng&lt;/strong&gt; cho phép phục vụ &lt;strong&gt;nhiều client song song&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Ví dụ:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Khi nhiều người truy cập cùng lúc, mỗi kết nối client được xử lý bởi &lt;strong&gt;một luồng riêng biệt (thread)&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Nhờ đó, các yêu cầu có thể được thực hiện &lt;strong&gt;đồng thời&lt;/strong&gt; mà không bị chặn (blocking).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-khái-niệm-về-thread&#34;&gt;2. Khái niệm về Thread&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Thread (luồng)&lt;/strong&gt; là đơn vị nhỏ nhất của quá trình xử lý trong một chương trình.&lt;br&gt;&#xA;Một chương trình có thể có nhiều luồng chạy &lt;strong&gt;song song (concurrent)&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
